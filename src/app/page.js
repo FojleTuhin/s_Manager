@@ -52,9 +52,11 @@ export default function page() {
       {/* Summary Cards */}
       <div className="space-y-4 mb-6 p-4">
         <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
-          <div className="">
+          <Link href='/supplierDues' className="">
             <div className="flex justify-between mb-4 items-center">
-              <h3 className="w320:text-[16px] text-[12px]">Total Customers Due</h3>
+              <h3 className="w320:text-[16px] text-[12px]">
+                Total Customers Due
+              </h3>
               <p className="w320:text-[24px] text-[20px] ">Tk 20,000</p>
             </div>
             <div className="flex justify-end">
@@ -62,12 +64,14 @@ export default function page() {
                 View All
               </Link>
             </div>
-          </div>
+          </Link>
         </div>
         <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
           <div className="">
             <div className="flex justify-between mb-4 items-center">
-              <h3 className="w320:text-[16px] text-[12px]">Total Suppliers Due</h3>
+              <h3 className="w320:text-[16px] text-[12px]">
+                Total Suppliers Due
+              </h3>
               <p className="w320:text-[24px] text-[20px] ">Tk 5000</p>
             </div>
             <div className="flex justify-end">
@@ -80,7 +84,7 @@ export default function page() {
       </div>
 
       {/* Recent Transactions */}
-      <div className=" mb-5"> 
+      <div className=" mb-5">
         <div className="flex justify-between items-center mb-4 bg-[#E0E0E0] p-4">
           <h3 className="font-medium">Recent</h3>
           <Search className="h-5 w-5" />
