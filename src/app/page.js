@@ -52,7 +52,7 @@ export default function page() {
       {/* Summary Cards */}
       <div className="space-y-4 mb-6 p-4">
         <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
-          <Link href='/supplierDues' className="">
+          <Link href="/customerDues" className="">
             <div className="flex justify-between mb-4 items-center">
               <h3 className="w320:text-[16px] text-[12px]">
                 Total Customers Due
@@ -67,7 +67,7 @@ export default function page() {
           </Link>
         </div>
         <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
-          <div className="">
+          <Link href="/supplierDues" className="">
             <div className="flex justify-between mb-4 items-center">
               <h3 className="w320:text-[16px] text-[12px]">
                 Total Suppliers Due
@@ -79,7 +79,7 @@ export default function page() {
                 View All
               </Link>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 

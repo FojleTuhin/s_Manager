@@ -77,7 +77,7 @@ const customerData = [
   },
 ];
 
-export default function SupplierDuesPage() {
+export default function CustomerDuesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCustomer, setSelectedCustomer] = useState();
 
@@ -137,7 +137,7 @@ export default function SupplierDuesPage() {
 
       {/* Total Customer Dues Section */}
       <div className="mt-8">
-        <p className="text-[18px] font-semibold mb-6">Total Supplier Dues</p>
+        <p className="text-[18px] font-semibold mb-6">Total Customer Dues</p>
 
         {customerData.map((data) => (
           <div onClick={() => setSelectedCustomer(data)} key={data.id}>
@@ -220,7 +220,7 @@ export default function SupplierDuesPage() {
       {/* Add New Due Button */}
       <div className=" p-4 bg-white">
         <Link
-          href="/addSupplierDue"
+          href="/addCustomerDue"
           className="w-full bg-[#4EA777] text-white py-3 rounded-[16px] text-sm font-medium"
         >
           Add new Due
