@@ -171,7 +171,7 @@ export default function CustomerDuesPage() {
       </div>
 
       {selectedCustomer && (
-        <div className="fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-16 px-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-16  animate-in fade-in duration-200">
           <div className="bg-white w-full max-w-[402px] p-4 pb-12  rounded-lg shadow-lg animate-in slide-in-from-bottom duration-300">
             <div className="flex justify-end mt-6">
               <button
@@ -186,7 +186,6 @@ export default function CustomerDuesPage() {
               <div>
                 <div className=" gap-6 items-center flex">
                   <p className="text-[20px]">{selectedCustomer.name}</p>
-                  
                 </div>
                 <p>{selectedCustomer.phone}</p>
               </div>
