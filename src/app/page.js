@@ -53,9 +53,9 @@ export default function page() {
       <div className="space-y-4 mb-6 p-4">
         <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
           <div className="">
-            <div className="flex justify-between mb-4">
-              <h3 className="">Total Customers Due</h3>
-              <p className="text-[24px] ">Tk 20,000</p>
+            <div className="flex justify-between mb-4 items-center">
+              <h3 className="w320:text-[16px] text-[12px]">Total Customers Due</h3>
+              <p className="w320:text-[24px] text-[20px] ">Tk 20,000</p>
             </div>
             <div className="flex justify-end">
               <Link href="#" className="text-[12px] underline">
@@ -66,9 +66,9 @@ export default function page() {
         </div>
         <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
           <div className="">
-            <div className="flex justify-between mb-4">
-              <h3 className="">Total Suppliers Due</h3>
-              <p className="text-[24px] ">Tk 5000</p>
+            <div className="flex justify-between mb-4 items-center">
+              <h3 className="w320:text-[16px] text-[12px]">Total Suppliers Due</h3>
+              <p className="w320:text-[24px] text-[20px] ">Tk 5000</p>
             </div>
             <div className="flex justify-end">
               <Link href="#" className="text-[12px] underline">
