@@ -1,101 +1,122 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import {
+  ArrowLeft,
+  Download,
+  Users,
+  Truck,
+  Search,
+  ChevronLeft,
+  Plus,
+  Calendar1,
+} from "lucide-react";
+import Link from "next/link";
+
+export default function page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen max-w-[402px] mx-auto bg-gray-50 ">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-4 p-4">
+        <button className="">
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button className="rounded-lg bg-[#4EA777] p-2">
+          <Download className="h-6 w-6 text-white" />
+        </button>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Action Cards */}
+      <div className="grid grid-cols-2 gap-4 mb-4 p-4">
+        <Link
+          href="#"
+          className="flex flex-col items-center justify-center p-4 bg-white rounded-lg border border-[#000000]"
+        >
+          <div className="mb-2 flex justify-between items-center">
+            <Users className="h-12 w-12" />
+            <Plus className="h-6 w-6" />
+          </div>
+          <span className="text-sm text-center">Add Customer Due</span>
+        </Link>
+        <Link
+          href="#"
+          className="flex flex-col items-center justify-center p-4 bg-white rounded-lg border border-[#000000]"
+        >
+          <div className="mb-2 flex justify-between items-center">
+            <Truck className="h-12 w-12" />
+            <Plus className="h-6 w-6" />
+          </div>
+          <span className="text-sm text-center">Add Suppliers Due</span>
+        </Link>
+      </div>
+
+      {/* Summary Cards */}
+      <div className="space-y-4 mb-6 p-4">
+        <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
+          <div className="">
+            <div className="flex justify-between mb-4">
+              <h3 className="">Total Customers Due</h3>
+              <p className="text-[24px] ">Tk 20,000</p>
+            </div>
+            <div className="flex justify-end">
+              <Link href="#" className="text-[12px] underline">
+                View All
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="bg-[#B9B9B9] p-4 rounded-lg text-[#000000]">
+          <div className="">
+            <div className="flex justify-between mb-4">
+              <h3 className="">Total Suppliers Due</h3>
+              <p className="text-[24px] ">Tk 5000</p>
+            </div>
+            <div className="flex justify-end">
+              <Link href="#" className="text-[12px] underline">
+                View All
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Transactions */}
+      <div className=" mb-5"> 
+        <div className="flex justify-between items-center mb-4 bg-[#E0E0E0] p-4">
+          <h3 className="font-medium">Recent</h3>
+          <Search className="h-5 w-5" />
+        </div>
+
+        <div className="space-y-4 p-4">
+          {[
+            { name: "Safat Jamil", date: "12-12-2012", amount: -500 },
+            { name: "Safat Jamil", date: "12-12-2012", amount: 500 },
+            { name: "Safat Jamil", date: "12-12-2012", amount: -500 },
+          ].map((transaction, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between py-4 border-b border-black"
+            >
+              <div>
+                <h4 className="">{transaction.name}</h4>
+                <div className="flex gap-[6px] items-center">
+                  <Calendar1 size={14} />
+                  <p className="text-[12px] text-[#000000]">
+                    {transaction.date}
+                  </p>
+                </div>
+              </div>
+              <span
+                className={`font-semibold ${
+                  transaction.amount > 0 ? "text-[#1AC225]" : "text-[#C21A1A]"
+                }`}
+              >
+                {transaction.amount > 0 ? "+" : ""} TK{" "}
+                {Math.abs(transaction.amount)}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
