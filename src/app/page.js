@@ -28,7 +28,7 @@ export default function page() {
       {/* Action Cards */}
       <div className="grid grid-cols-2 gap-4 mb-4 p-4">
         <Link
-          href="#"
+          href="/addCustomerDue"
           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg border border-[#000000]"
         >
           <div className="mb-2 flex justify-between items-center">
@@ -60,9 +60,7 @@ export default function page() {
               <p className="w320:text-[24px] text-[20px] ">Tk 20,000</p>
             </div>
             <div className="flex justify-end">
-              <Link href="#" className="text-[12px] underline">
-                View All
-              </Link>
+              <p className="text-[12px] underline">View All</p>
             </div>
           </Link>
         </div>
@@ -75,9 +73,7 @@ export default function page() {
               <p className="w320:text-[24px] text-[20px] ">Tk 5000</p>
             </div>
             <div className="flex justify-end">
-              <Link href="#" className="text-[12px] underline">
-                View All
-              </Link>
+              <p className="text-[12px] underline">View All</p>
             </div>
           </Link>
         </div>
