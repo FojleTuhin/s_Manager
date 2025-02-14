@@ -7,6 +7,8 @@ import {
   MessageSquare,
   ArrowLeft,
   ChevronLeft,
+  X,
+  MessageSquareMore,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +20,8 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import Link from "next/link";
+import Image from "next/image";
+import img from "../../../public/Frame 267.png";
 
 // Mock customer data
 const mockCustomers = [
@@ -29,6 +33,7 @@ export default function CustomerForm() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [date, setDate] = useState();
+  const [save, setSave] = useState(false);
   const [formData, setFormData] = useState({
     customerName: "",
     phoneNumber: "",
@@ -57,7 +62,7 @@ export default function CustomerForm() {
   };
 
   return (
-    <div className="min-h-screen bg-background p-4 max-w-md mx-auto">
+    <div className="min-h-screen bg-background p-4 max-w-md mx-auto relative">
       <div className="flex items-center gap-4 mb-6">
         <Link href="/" variant="ghost" size="icon" className="h-8 w-8">
           <ChevronLeft className="h-6 w-6" />
@@ -69,6 +74,7 @@ export default function CustomerForm() {
           <Label htmlFor="customerName">Customers Name</Label>
           <div className="relative">
             <Input
+              required
               id="customerName"
               value={selectedCustomer ? selectedCustomer.name : searchTerm}
               onChange={(e) => {
@@ -124,6 +130,7 @@ export default function CustomerForm() {
         <div className="space-y-2">
           <Label htmlFor="phoneNumber">Phone Number</Label>
           <Input
+            required
             id="phoneNumber"
             value={formData.phoneNumber}
             onChange={(e) =>
@@ -136,6 +143,7 @@ export default function CustomerForm() {
         <div className="space-y-2">
           <Label htmlFor="productName">Product Name</Label>
           <Input
+            required
             id="productName"
             value={formData.productName}
             onChange={(e) =>
@@ -159,6 +167,7 @@ export default function CustomerForm() {
           <Label htmlFor="quantity">Quantity</Label>
           <div className="relative">
             <Input
+              required
               id="quantity"
               value={formData.quantity}
               onChange={(e) =>
@@ -173,6 +182,7 @@ export default function CustomerForm() {
         <div className="space-y-2">
           <Label htmlFor="sellingPrice">Selling Price</Label>
           <Input
+            required
             id="sellingPrice"
             type="number"
             value={formData.sellingPrice}
@@ -207,6 +217,7 @@ export default function CustomerForm() {
         <div className="space-y-2">
           <Label htmlFor="amountPaid">Amount Paid</Label>
           <Input
+            required
             id="amountPaid"
             type="number"
             value={formData.amountPaid}
@@ -219,6 +230,7 @@ export default function CustomerForm() {
         <div className="space-y-2">
           <Label htmlFor="amountDue">Amount Due</Label>
           <Input
+            required
             id="amountDue"
             type="number"
             value={formData.amountDue}
@@ -229,10 +241,64 @@ export default function CustomerForm() {
         </div>
 
         <div className=" p-4 bg-white">
-          <div className="w-full text-center bg-[#4EA777] text-white py-3 rounded-[16px] text-sm font-medium">
+          <button
+            onClick={() => setSave(true)}
+            className="w-full text-center bg-[#4EA777] text-white py-3 rounded-[16px] text-sm font-medium"
+          >
             Save
-          </div>
+          </button>
         </div>
+      </div>
+
+      <div>
+        {save && (
+          <div className="fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-16  animate-in fade-in duration-200">
+            <div className="bg-white w-full max-w-[402px] p-4   rounded-lg shadow-lg animate-in slide-in-from-bottom duration-300">
+              <div className="flex justify-end mt-6">
+                <button
+                  onClick={() => setSave(false)}
+                  className="p-1 hover:bg-gray-100 rounded-full"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="flex justify-center mb-5">
+                <Image src={img} alt="img" className="w-[180px]" />
+              </div>
+
+              <div className="flex justify-between items-center mb-5 py-4">
+                <div>
+                  <p>Safat Jamil</p>
+                  <p>019882823423</p>
+                </div>
+
+                <div>
+                  <p>12 Dec</p>
+                </div>
+              </div>
+
+              <div className="flex justify-between mb-3">
+                <p>Total Amount</p>
+                <p>TK 1600</p>
+              </div>
+              <div className="flex justify-between mb-3">
+                <p>Total Due Paid</p>
+                <p className="text-[#1AC225]">TK 400</p>
+              </div>
+              <div className="flex justify-between mb-8 text-[24px] font-semibold">
+                <p>Current Due</p>
+                <p className="text-[#C21A1A]">-TK 1200</p>
+              </div>
+
+              <div className=" p-4 bg-white">
+                <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
+                  <Link href="/">Back to home</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

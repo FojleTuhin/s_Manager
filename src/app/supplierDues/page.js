@@ -219,12 +219,9 @@ export default function SupplierDuesPage() {
 
       {/* Add New Due Button */}
       <div className=" p-4 bg-white">
-        <Link
-          href="/addSupplierDue"
-          className="w-full bg-[#4EA777] text-white py-3 rounded-[16px] text-sm font-medium"
-        >
-          Add new Due
-        </Link>
+        <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
+          <Link href="/addSupplierDue">Add new Due</Link>
+        </div>
       </div>
     </div>
   );
