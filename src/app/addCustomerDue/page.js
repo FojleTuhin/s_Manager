@@ -264,7 +264,7 @@ export default function CustomerForm() {
               </div>
 
               <div className="flex justify-center mb-5">
-                <Image src={img} alt="img" className="w-[180px]" />
+                <Image src={img} alt="img" className="w-[150px]" />
               </div>
 
               <div className="flex justify-between items-center mb-5 py-4">
