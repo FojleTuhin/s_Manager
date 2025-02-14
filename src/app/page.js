@@ -1,7 +1,14 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
-  ArrowLeft,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { format } from "date-fns";
+import {
   Download,
   Users,
   Truck,
@@ -9,18 +16,27 @@ import {
   ChevronLeft,
   Plus,
   Calendar1,
+  X,
+  CalendarIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
-export default function page() {
+export default function Page() {
+  const [download, setDownload] = useState(false);
+  const [startDate, setStartDate] = useState()
+  const [endDate, setEndDate] = useState()
   return (
-    <div className="min-h-screen max-w-[402px] mx-auto bg-gray-50 ">
+    <div className="min-h-screen max-w-[402px] mx-auto bg-gray-50 relative">
       {/* Header */}
       <div className="flex items-center justify-between mb-4 p-4">
         <button className="">
           <ChevronLeft className="h-6 w-6" />
         </button>
-        <button className="rounded-lg bg-[#4EA777] p-2">
+        <button
+          onClick={() => setDownload(true)}
+          className="rounded-lg bg-[#4EA777] p-2"
+        >
           <Download className="h-6 w-6 text-white" />
         </button>
       </div>
@@ -117,6 +133,95 @@ export default function page() {
           ))}
         </div>
       </div>
+
+      {download && (
+        <div className="fixed inset-0 bg-black/20 z-50 flex items-start justify-center pt-16 animate-in fade-in duration-200">
+          <div className="bg-white w-full max-w-[402px] p-4 rounded-lg shadow-lg animate-in slide-in-from-bottom duration-300">
+            <div className="flex justify-end">
+              <button
+                onClick={() => setDownload(false)}
+                className="p-1 hover:bg-gray-100 rounded-full"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="p-4 space-y-6">
+              {/* Starting Date */}
+              <div className="space-y-2">
+                <label className="text-lg font-medium">Starting</label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start text-left font-normal h-12"
+                    >
+                      {startDate ? (
+                        format(startDate, "PPP")
+                      ) : (
+                        <span className="text-muted-foreground">
+                          Pick a date
+                        </span>
+                      )}
+                      <CalendarIcon className="ml-auto h-5 w-5 text-gray-400" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={startDate}
+                      onSelect={setStartDate}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+
+              {/* Finishing Date */}
+              <div className="space-y-2">
+                <label className="text-lg font-medium">Finishing</label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start text-left font-normal h-12"
+                    >
+                      {endDate ? (
+                        format(endDate, "PPP")
+                      ) : (
+                        <span className="text-muted-foreground">
+                          Pick a date
+                        </span>
+                      )}
+                      <CalendarIcon className="ml-auto h-5 w-5 text-gray-400" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={endDate}
+                      onSelect={setEndDate}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+
+              <div className="flex justify-center">
+                <Button
+                  className="bg-[#4EA777] hover:bg-[#4EA777]/90 text-white py-6 text-lg rounded-lg px-8"
+                  onClick={() => {
+                    console.log("Download clicked", { startDate, endDate });
+                    // setDownload(false);
+                  }}
+                >
+                  Download Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
