@@ -24,8 +24,8 @@ import { useState } from "react";
 
 export default function Page() {
   const [download, setDownload] = useState(false);
-  const [startDate, setStartDate] = useState()
-  const [endDate, setEndDate] = useState()
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
   return (
     <div className="min-h-screen max-w-[402px] mx-auto bg-gray-50 relative">
       {/* Header */}

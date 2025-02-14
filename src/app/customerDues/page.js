@@ -224,11 +224,15 @@ export default function CustomerDuesPage() {
       )}
 
       {/* Add New Due Button */}
-      <div className=" p-4 bg-white">
-        <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
-          <Link href="/addCustomerDue">Add new Due</Link>
+      
+
+      <Link href="/addCustomerDue">
+        <div className=" p-4 bg-white">
+          <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
+            Add new Due
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

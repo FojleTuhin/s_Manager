@@ -291,11 +291,13 @@ export default function CustomerForm() {
                 <p className="text-[#C21A1A]">-TK 1200</p>
               </div>
 
-              <div className=" p-4 bg-white">
-                <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
-                  <Link href="/">Back to home</Link>
+              <Link href="/">
+                <div className=" p-4 bg-white">
+                  <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
+                    Back to home
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         )}

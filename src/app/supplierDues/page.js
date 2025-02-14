@@ -125,8 +125,8 @@ export default function SupplierDuesPage() {
                   <div className="flex gap-4">
                     <Phone size={24} />
                     <Link href="/sms">
-                  <MessageSquareMore size={24} />
-                </Link>
+                      <MessageSquareMore size={24} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -224,11 +224,14 @@ export default function SupplierDuesPage() {
       )}
 
       {/* Add New Due Button */}
-      <div className=" p-4 bg-white">
-        <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
-          <Link href="/addSupplierDue">Add new Due</Link>
+
+      <Link href="/addSupplierDue">
+        <div className=" p-4 bg-white">
+          <div className="w-full bg-[#4EA777] text-white text-center py-3 rounded-[16px] text-sm font-medium">
+            Add new Due
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
