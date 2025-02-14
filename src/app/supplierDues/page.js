@@ -124,7 +124,9 @@ export default function SupplierDuesPage() {
                   </div>
                   <div className="flex gap-4">
                     <Phone size={24} />
-                    <MessageSquareMore size={24} />
+                    <Link href="/sms">
+                  <MessageSquareMore size={24} />
+                </Link>
                   </div>
                 </div>
               </div>
@@ -163,7 +165,9 @@ export default function SupplierDuesPage() {
                 <a href={`tel:+${data.phone}`}>
                   <Phone size={24} />
                 </a>
-                <MessageSquareMore size={24} />
+                <Link href="/sms">
+                  <MessageSquareMore size={24} />
+                </Link>
               </div>
             </div>
           </div>
@@ -193,7 +197,9 @@ export default function SupplierDuesPage() {
                 <a href={`tel:+${selectedCustomer.phone}`}>
                   <Phone size={24} />
                 </a>
-                <MessageSquareMore size={24} />
+                <Link href="/sms">
+                  <MessageSquareMore size={24} />
+                </Link>
               </div>
             </div>
 
