@@ -38,7 +38,7 @@ export default function page() {
           <span className="text-sm text-center">Add Customer Due</span>
         </Link>
         <Link
-          href="#"
+          href="/addSupplierDue"
           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg border border-[#000000]"
         >
           <div className="mb-2 flex justify-between items-center">
